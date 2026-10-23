@@ -25,7 +25,7 @@ concurrency:
 jobs:
   review:
     if: >- #dsh-allowed-actors:v1
-      ${{ ((github.event_name == 'pull_request_target' && github.event.pull_request.draft == false) || (github.event.sender.type != 'Bot' && contains(github.event.comment.body || github.event.review.body, '@dsh'))) && (((contains(fromJSON('["fixture-observer","fixture-observer[bot]"]'), github.actor)) && (github.event_name != 'workflow_run' || ((!github.event.workflow_run.actor.login || (contains(fromJSON('["fixture-observer","fixture-observer[bot]"]'), github.event.workflow_run.actor.login))) && (!github.event.workflow_run.triggering_actor.login || (contains(fromJSON('["fixture-observer","fixture-observer[bot]"]'), github.event.workflow_run.triggering_actor.login))))))) }}
+      ${{ ((github.event_name == 'pull_request_target' && github.event.pull_request.draft == false) || (github.event.sender.type != 'Bot' && contains(github.event.comment.body || github.event.review.body, '@dsh'))) && (((contains(fromJSON('["lixiaoyiao","lixiaoyiao[bot]"]'), github.actor)) && (github.event_name != 'workflow_run' || ((!github.event.workflow_run.actor.login || (contains(fromJSON('["lixiaoyiao","lixiaoyiao[bot]"]'), github.event.workflow_run.actor.login))) && (!github.event.workflow_run.triggering_actor.login || (contains(fromJSON('["lixiaoyiao","lixiaoyiao[bot]"]'), github.event.workflow_run.triggering_actor.login))))))) }}
     runs-on: ubuntu-latest
     timeout-minutes: 30
     steps:
@@ -43,4 +43,4 @@ jobs:
           isolation: docker
           natural-language-write: "false"
           allow-write: "false"
-          allowed-actors: fixture-observer
+          allowed-actors: Lixiaoyiao
